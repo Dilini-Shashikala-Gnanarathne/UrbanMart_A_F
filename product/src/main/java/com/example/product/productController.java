@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping(value = "/api/v1")
 public class productController {
-//    @GetMapping("/allProduct"){
-//        public String getProduct(){
-//            return "All Product";
-//        }
-//    }
-}
+    @GetMapping("/getProduct")
+        public String getProduct(){
+            return "All Product";
+        }
+    }
+
