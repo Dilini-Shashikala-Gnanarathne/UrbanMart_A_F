@@ -24,4 +24,17 @@ public class productService {
         return modelMapper.map(productList, new TypeToken<List<productDTO>>(){}.getType());
     }
 
+    public productDTO createProduct(productDTO productDTO){
+        productRepository.save(modelMapper.map(productDTO, product.class));
+        return productDTO;
+    }
+    public productDTO updateProduct(productDTO productDTO){
+        productRepository.save(modelMapper.map(productDTO, product.class));
+        return productDTO;
+    }
+    public productDTO deleteProduct(productDTO productDTO){
+        productRepository.delete(modelMapper.map(productDTO, product.class));
+        return productDTO;
+    }
+
 }
