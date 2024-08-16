@@ -1,7 +1,7 @@
-package com.example.product.controller;
+package com.example.order.controller;
 
-import com.example.product.DTO.productDTO;
-import com.example.product.service.productService;
+import com.example.order.DTO.orderDTO;
+import com.example.order.service.orderService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,29 +9,29 @@ import java.util.List;
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/api/v1")
-public class productController {
-    private final com.example.product.service.productService productService;
+public class orderController {
+    private final com.example.order.service.orderService orderService;
 
-    public productController(productService productService) {
-        this.productService = productService;
-    }
-
-    @GetMapping("/getproduct")
-    public List<productDTO> getProduct() {
-        return productService.getAllProduct();
+    public orderController(orderService orderService) {
+        this.orderService = orderService;
     }
 
-    @PostMapping("/createproduct")
-    public productDTO createProduct(@RequestBody productDTO productDTO) {
-        return productService.createProduct(productDTO);
+    @GetMapping("/getorder")
+    public List<orderDTO> getorder() {
+        return orderService.getAllorder();
     }
-    @PutMapping("/updateproduct")
-    public productDTO updateProduct(@RequestBody productDTO productDTO) {
-        return productService.updateProduct(productDTO);
+
+    @PostMapping("/createorder")
+    public orderDTO createorder(@RequestBody orderDTO orderDTO) {
+        return orderService.createorder(orderDTO);
     }
-    @DeleteMapping("/deleteproduct")
-    public productDTO deleteProduct(@RequestBody productDTO productDTO) {
-        return productService.deleteProduct(productDTO);
+    @PutMapping("/updateorder")
+    public orderDTO updateorder(@RequestBody orderDTO orderDTO) {
+        return orderService.updateorder(orderDTO);
+    }
+    @DeleteMapping("/deleteorder")
+    public orderDTO deleteorder(@RequestBody orderDTO orderDTO) {
+        return orderService.deleteorder(orderDTO);
     }
 }
 

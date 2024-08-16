@@ -1,10 +1,10 @@
-package com.example.product.service;
+package com.example.order.service;
 
 
 
-import com.example.product.DTO.productDTO;
-import com.example.product.model.product;
-import com.example.product.repository.productRepo;
+import com.example.order.DTO.orderDTO;
+import com.example.order.model.order;
+import com.example.order.repository.orderRepo;
 import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -15,28 +15,28 @@ import java.util.List;
 
 @Service
 @Transactional
-public class productService {
+public class orderService {
     @Autowired
-    private  productRepo productRepository;
+    private  orderRepo orderRepository;
     @Autowired
     private ModelMapper modelMapper;
 
-    public List<productDTO> getAllProduct(){
-        List<product> productList= productRepository.findAll();
-        return modelMapper.map(productList, new TypeToken(){}.getType());
+    public List<orderDTO> getAllorder(){
+        List<order> orderList= orderRepository.findAll();
+        return modelMapper.map(orderList, new TypeToken(){}.getType());
     }
 
-    public productDTO createProduct(productDTO productDTO){
-        productRepository.save(modelMapper.map(productDTO, product.class));
-        return productDTO;
+    public orderDTO createorder(orderDTO orderDTO){
+        orderRepository.save(modelMapper.map(orderDTO, order.class));
+        return orderDTO;
     }
-    public productDTO updateProduct(productDTO productDTO){
-        productRepository.save(modelMapper.map(productDTO, product.class));
-        return productDTO;
+    public orderDTO updateorder(orderDTO orderDTO){
+        orderRepository.save(modelMapper.map(orderDTO, order.class));
+        return orderDTO;
     }
-    public productDTO deleteProduct(productDTO productDTO){
-        productRepository.delete(modelMapper.map(productDTO, product.class));
-        return productDTO;
+    public orderDTO deleteorder(orderDTO orderDTO){
+        orderRepository.delete(modelMapper.map(orderDTO, order.class));
+        return orderDTO;
     }
 
 }

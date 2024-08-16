@@ -1,4 +1,4 @@
-package com.example.product.model;
+package com.example.order.model;
 
 
 import jakarta.persistence.Entity;
@@ -10,12 +10,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class product {
+public class order {
     @Id
-    private int productID;
-    private String productName;
-    private String productDescription;
-    private int productPrice;
-    private String productCategory;
-    private String productImage;
+    private int orderID;
+    private String orderName;
+    private String orderDescription;
+    private int orderPrice;
+    private String orderCategory;
+    private String orderImage;
 }

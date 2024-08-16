@@ -1,11 +1,11 @@
-package com.example.product.repository;
+package com.example.order.repository;
 
-import com.example.product.model.product;
+import com.example.order.model.order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface productRepo extends JpaRepository<product, Integer> {
+public interface orderRepo extends JpaRepository<order, Integer> {
 
 
 }
