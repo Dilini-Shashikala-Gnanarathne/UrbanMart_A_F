@@ -1,21 +1,20 @@
 package com.example.order.model;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 @Entity
-@Data
-@AllArgsConstructor
+
 @NoArgsConstructor
-public class order {
+@AllArgsConstructor
+@Data
+public class orderModel {
     @Id
-    private int orderID;
+    private int id;
     private String orderName;
-    private String orderDescription;
-    private int orderPrice;
-    private String orderCategory;
-    private String orderImage;
+    private String orderStatus;
+    private String orderDate;
 }

@@ -9,10 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class orderDTO {
-    private int orderID;
+    private int id;
     private String orderName;
-    private String orderDescription;
-    private int orderPrice;
-    private String orderCategory;
-    private String orderImage;
+    private String orderStatus;
+    private String orderDate;
+
 }
